@@ -328,6 +328,15 @@
       }
     }
 
+    function mousePressed() {
+        if (currentScreen === 2) {
+            let d = dist(mouseX, mouseY, birdieX, birdieY);
+            if (d < 40) {
+                birdieHit = true;
+            }
+        }
+    }
+
     function keyPressed() {
       // Choose screen
       if (key === '1') {
