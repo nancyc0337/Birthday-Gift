@@ -150,6 +150,20 @@
 
       // }
       text("Press 'E' or 'C' or 'S'.", 450, 55);
+
+      if (currentLanguage === 'english') {
+        fill("#000000");
+        textSize(50);
+        text("🎉Happy Birthday!🎉", 460, 300);
+      } else if (currentLanguage === 'chinese') {
+        fill("#000000");
+        textSize(50);
+        text("🎉生日快乐!🎉", 550, 100);
+      } else if (currentLanguage === 'spanish') {
+        fill("#000000");
+        textSize(50);
+        text("🎉¡Feliz cumpleaños!🎉", 425, 100);
+      }
     }
 
     function keyPressed() {
