@@ -78,7 +78,7 @@
       rect(lx, ly - (laptopH / 2 + 10), laptopW, laptopH, 16, 16, 0, 0); // Dynamic bounding box
 
       // Inner Screen Border (Bezel)
-      fill(000); // Modern thin black bezel
+      fill(255); // Modern thin black bezel
       noStroke();
       rect(lx, ly - (laptopH / 2 + 10), innerW, innerH, 6, 6, 0, 0);
 
@@ -86,10 +86,10 @@
       fill(0);
       stroke(60);
       strokeWeight(1);
-      ellipse(lx, ly - laptopH, 6, 6);
+      ellipse(lx, ly - laptopH - 4, 6, 6);
       fill(0, 100, 255); // Camera glass lens element
       noStroke();
-      ellipse(lx, ly - laptopH, 2, 2);
+      ellipse(lx, ly - laptopH - 4, 2, 2);
 
       // ==========================================
       // 2. LAPTOP HINGE
