@@ -59,20 +59,115 @@
 
           // Draw your laptop here
           // (Paste your entire laptop code here)
+          // Center coordinates for positioning the laptop
+        let lx = width / 2;
+        let ly = 520; // Pushed down slightly to give room for the taller screen
 
-          fill(0);
+        // ==========================================
+        // NEW SIZE VARIABLES (Modify these to resize)
+        // ==========================================
+        let laptopW = 1000; // Increased width (was 460)
+        let laptopH = 430; // Increased screen height (was 280)
+
+        // Derived dimensional offsets to keep everything proportional
+        let halfW = laptopW / 2;
+        let innerW = laptopW - 20;
+        let innerH = laptopH - 20;
+        let glassW = innerW - 16;
+        let glassH = innerH - 16;
+
+        // ==========================================
+        // 1. LAPTOP SCREEN (LID)
+        // ==========================================
+
+        // Outer Lid Bezel
+        fill(140); // Space gray aluminum
+        stroke(100);
+        strokeWeight(2);
+        rectMode(CENTER);
+        rect(lx, ly - (laptopH / 2 + 10), laptopW, laptopH, 16, 16, 0, 0); // Dynamic bounding box
+
+        // Inner Screen Border (Bezel)
+        fill(255); // Modern thin black bezel
+        noStroke();
+        rect(lx, ly - (laptopH / 2 + 10), innerW, innerH, 6, 6, 0, 0);
+
+        // Web Camera
+        fill(0);
+        stroke(60);
+        strokeWeight(1);
+        ellipse(lx, ly - laptopH - 4, 6, 6);
+        fill(0, 100, 255); // Camera glass lens element
+        noStroke();
+        ellipse(lx, ly - laptopH - 4, 2, 2);
+
+        // ==========================================
+        // 2. LAPTOP HINGE
+        // ==========================================
+        fill(70); // Dark plastic hinge segment
+        stroke(50);
+        rectMode(CENTER);
+        rect(lx, ly - 6, laptopW * 0.48, 12, 4);
+
+        // ==========================================
+        // 3. KEYBOARD DECK (LOWER BASE)
+        // ==========================================
+        rectMode(CORNER);
+
+        let baseW = halfW + 10;
+
+        // Base Thickness (Side Edge Shadow)
+        fill(110);
+        stroke(80);
+        rect(lx - baseW, ly + 25, baseW * 2, 12, 0, 0, 12, 12);
+
+        // Main Aluminum Top Deck (Slightly darker gray for 3D depth perspective)
+        fill(150);
+        stroke(110);
+        quad(lx - (baseW - 10), ly, lx + (baseW - 10), ly, lx + baseW, ly + 25, lx - baseW, ly + 25);
+
+        // Keyboard Recess Pocket
+        fill(120);
+        noStroke();
+        quad(lx - (baseW - 40), ly + 4, lx + (baseW - 40), ly + 4, lx + (baseW - 34), ly + 14, lx - (baseW - 34), ly + 14);
+
+        // Keyboard Keys (Aggregated Rows)
+        fill(45); // Dark gray chiclet keys
+        quad(lx - (baseW - 44), ly + 5, lx + (baseW - 44), ly + 5, lx + (baseW - 38), ly + 13, lx - (baseW - 38), ly + 13);
+
+        // Individual Spacebar Detail
+        fill(60);
+        stroke(40);
+        strokeWeight(1);
+        quad(lx - 60, ly + 11, lx + 60, ly + 11, lx + 62, ly + 13, lx - 62, ly + 13);
+
+        // Trackpad
+        fill(135); // Matches top deck finish closely
+        stroke(110);
+        quad(lx - 65, ly + 16, lx + 65, ly + 16, lx + 68, ly + 23, lx - 68, ly + 23);
+
+        // Front Lip Opening Notch
+        fill(90);
+        noStroke();
+        rect(lx - 35, ly + 25, 70, 3, 0, 0, 2, 2);
+
+        fill("#000000");
+        textSize(50);
+        text("Press 'E' or 'C' or 'S'.", 450, 55);
+
+        if (currentLanguage === 'english') {
+          fill("#000000");
           textSize(50);
-          text("Press 'E', 'C', or 'S'.", 450, 55);
-
-          if (currentLanguage === "english") {
-              text("🎉Happy Birthday!🎉", 460, 300);
-          }
-          else if (currentLanguage === "chinese") {
-              text("🎉生日快乐!🎉", 530, 300);
-          }
-          else if (currentLanguage === "spanish") {
-              text("🎉¡Feliz cumpleaños!🎉", 430, 300);
-          }
+          text("🎉Happy Birthday!🎉", 460, 300);
+        } else if (currentLanguage === 'chinese') {
+          fill("#000000");
+          textSize(50);
+          text("🎉生日快乐!🎉", 530, 300);
+        } else if (currentLanguage === 'spanish') {
+          fill("#000000");
+          textSize(50);
+          text("🎉¡Feliz cumpleaños!🎉", 430, 300);
+        }
       }
 
       // RAT
