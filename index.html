@@ -42,6 +42,71 @@
     }
 
     function draw() {
+      // MENU
+      if (currentScreen === 0) {
+          background(240);
+
+          textFont('Iansui');
+          textStyle(BOLD);
+          fill(0);
+          textSize(90);
+          text("Press '1' or '2'.", 350, 350);
+      }
+
+      // LAPTOP
+      else if (currentScreen === 1) {
+          background(240);
+
+          // Draw your laptop here
+          // (Paste your entire laptop code here)
+
+          fill(0);
+          textSize(50);
+          text("Press 'E', 'C', or 'S'.", 450, 55);
+
+          if (currentLanguage === "english") {
+              text("🎉Happy Birthday!🎉", 460, 300);
+          }
+          else if (currentLanguage === "chinese") {
+              text("🎉生日快乐!🎉", 530, 300);
+          }
+          else if (currentLanguage === "spanish") {
+              text("🎉¡Feliz cumpleaños!🎉", 430, 300);
+          }
+      }
+
+      // RAT
+      else if (currentScreen === 2) {
+          background(240);
+
+          // Draw your rat and birdie here
+          // (Paste your entire rat code here)
+
+          if (!birdieHit) {
+              text("Click the birdie.", 550, 585);
+          }
+          else {
+              text("Press 'E', 'C', or 'S'.", 500, 585);
+
+              if (currentLanguage === "english") {
+                  text("🎉Happy Birthday!🎉", 475, 100);
+              }
+              else if (currentLanguage === "chinese") {
+                  text("🎉生日快乐!🎉", 550, 100);
+              }
+              else if (currentLanguage === "spanish") {
+                  text("🎉¡Feliz cumpleaños!🎉", 425, 100);
+              }
+          }
+      }
+
+
+
+
+
+
+
+
       background(240); // Light gray background
       textFont('Iansui');
       textStyle(BOLD);
