@@ -316,12 +316,24 @@
               text("Press 'E', 'C', or 'S'.", 500, 585);
 
               if (currentLanguage === "english") {
-                  text("🎉Happy Birthday!🎉", 475, 100);
+                  textFont('Iansui');
+                  textStyle(BOLD);
+                  fill("#000000");
+                  textSize(50);
+                  text("🎉Happy Birthday!🎉", 450, 100);
               }
               else if (currentLanguage === "chinese") {
+                  textFont('Iansui');
+                  textStyle(BOLD);
+                  fill("#000000");
+                  textSize(50);
                   text("🎉生日快乐!🎉", 550, 100);
               }
               else if (currentLanguage === "spanish") {
+                  textFont('Iansui');
+                  textStyle(BOLD);
+                  fill("#000000");
+                  textSize(50);
                   text("🎉¡Feliz cumpleaños!🎉", 425, 100);
               }
           }
