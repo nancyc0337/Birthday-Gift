@@ -22,7 +22,7 @@
       background-color: #f0f0f0;
     }
   </style>
-  <title>🥳Happy Birthday🥳</title>
+  <title>Happy Birthday</title>
 </head>
 <body>
   <!-- HTML -->
@@ -34,7 +34,7 @@
     let birdieY = 310;
     let birdieX = 340;
     let currentLanguage = 'none';
-    let currentScreen = 0; 
+    let currentScreen = 0;
 
     function setup() {
       let cnv = createCanvas(1400, 600);
@@ -54,89 +54,57 @@
 
       else if (currentScreen === 1) {
           background(240);
-        let lx = width / 2;
-        let ly = 520;
-        let laptopW = 1000;
-        let laptopH = 430;
+          let lx = width / 2;
+          let ly = 520;
+          let laptopW = 1000;
+          let laptopH = 430;
 
-        let halfW = laptopW / 2;
-        let innerW = laptopW - 20;
-        let innerH = laptopH - 20;
-        let glassW = innerW - 16;
-        let glassH = innerH - 16;
+          fill(140);
+          stroke(100);
+          strokeWeight(2);
+          rectMode(CENTER);
+          rect(lx, ly - (laptopH / 2 + 10), laptopW, laptopH);
 
-        fill(140);
-        stroke(100);
-        strokeWeight(2);
-        rectMode(CENTER);
-        rect(lx, ly - (laptopH / 2 + 10), laptopW, laptopH, 16, 16, 0, 0);
+          fill(255);
+          noStroke();
+          rect(lx, ly - (laptopH / 2 + 10), laptopW - 20, laptopH - 20, 6, 6, 0, 0);
 
-        fill(255);
-        noStroke();
-        rect(lx, ly - (laptopH / 2 + 10), innerW, innerH, 6, 6, 0, 0);
+          fill(0);
+          stroke(60);
+          strokeWeight(1);
+          ellipse(lx, ly - laptopH - 4, 6, 6);
+          fill(0, 100, 255);
+          noStroke();
+          ellipse(lx, ly - laptopH - 4, 2, 2);
 
-        fill(0);
-        stroke(60);
-        strokeWeight(1);
-        ellipse(lx, ly - laptopH - 4, 6, 6);
-        fill(0, 100, 255);
-        noStroke();
-        ellipse(lx, ly - laptopH - 4, 2, 2);
+          fill(70);
+          stroke(50);
+          rectMode(CENTER);
+          rect(lx, ly + 3.5, laptopW * 0.48, 26);
 
-        fill(70);
-        stroke(50);
-        rectMode(CENTER);
-        rect(lx, ly - 6, laptopW * 0.48, 12, 4);
+          fill(140);
+          stroke(50);
+          rectMode(CENTER);
+          rect(700, 550, 1000, 25, 5, 5, 5, 5);
 
-        rectMode(CORNER);
-
-        let baseW = halfW + 10;
-
-        fill(110);
-        stroke(80);
-        rect(lx - baseW, ly + 25, baseW * 2, 12, 0, 0, 12, 12);
-
-        fill(150);
-        stroke(110);
-        quad(lx - (baseW - 10), ly, lx + (baseW - 10), ly, lx + baseW, ly + 25, lx - baseW, ly + 25);
-
-        fill(120);
-        noStroke();
-        quad(lx - (baseW - 40), ly + 4, lx + (baseW - 40), ly + 4, lx + (baseW - 34), ly + 14, lx - (baseW - 34), ly + 14);
-
-        fill(45);
-        quad(lx - (baseW - 44), ly + 5, lx + (baseW - 44), ly + 5, lx + (baseW - 38), ly + 13, lx - (baseW - 38), ly + 13);
-
-        fill(60);
-        stroke(40);
-        strokeWeight(1);
-        quad(lx - 60, ly + 11, lx + 60, ly + 11, lx + 62, ly + 13, lx - 62, ly + 13);
-
-        fill(135);
-        stroke(110);
-        quad(lx - 65, ly + 16, lx + 65, ly + 16, lx + 68, ly + 23, lx - 68, ly + 23);
-
-        fill(90);
-        noStroke();
-        rect(lx - 35, ly + 25, 70, 3, 0, 0, 2, 2);
-
-        fill("#000000");
-        textSize(50);
-        text("Press 'E' or 'C' or 'S'.", 450, 55);
-
-        if (currentLanguage === 'english') {
           fill("#000000");
           textSize(50);
-          text("🎉Happy Birthday!🎉", 460, 300);
-        } else if (currentLanguage === 'chinese') {
-          fill("#000000");
-          textSize(50);
-          text("🎉生日快乐!🎉", 530, 300);
-        } else if (currentLanguage === 'spanish') {
-          fill("#000000");
-          textSize(50);
-          text("🎉¡Feliz cumpleaños!🎉", 430, 300);
-        }
+          text("Press 'E' or 'C' or 'S'.", 450, 55);
+
+          if (currentLanguage === 'english') {
+            fill("#000000");
+            textSize(50);
+            text("🎉Happy Birthday!🎉", 460, 300);
+          } else if (currentLanguage === 'chinese') {
+            fill("#000000");
+            textSize(50);
+            text("🎉生日快乐!🎉", 530, 300);
+          } else if (currentLanguage === 'spanish') {
+            fill("#000000");
+            textSize(50);
+            text("🎉¡Feliz cumpleaños!🎉", 430, 300);
+          }
+          rectMode(CORNER);
       }
 
       else if (currentScreen === 2) {
